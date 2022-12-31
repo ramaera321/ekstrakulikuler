@@ -102,15 +102,10 @@ class C_produksi extends CI_Controller
             $ekstra["ekstra"][13] = $this->M_pengetahuan->hitung2($a, $b, $c, $d); // 8 kriteria 1
             $ekstra["ekstra"][14] = $this->M_pengetahuan->hitung2($a, $b, $c, $f); // 8 kriteria 2
             $ekstra["id"][0] = $id;
-            // echo "<pre>";
-            // print_r($a . '/');
-            // print_r($b . '/');
-            // print_r($c . '/');
-            // print_r($d . '/');
-            // print_r($e . '/');
-            // print_r($f . '/');
-            // print_r($g . '/');
-            // die();
+
+            // menyimpan perhitungan K1 - K7
+            $this->M_produksi->saveToProduksi();
+
             return $this->load->view('cobacoba', $ekstra);
         }
     }
@@ -135,12 +130,28 @@ class C_produksi extends CI_Controller
 
     public function save()
     {
+        // $post = $this->input->post();
+        // echo "<pre>";
+        // print_r($post);
+        // die();
+        // $this->Id_perhitungan = $post['Id_p'];
+        // $this->Tanggal_Produksi = date('Y/m/d', strtotime($post["tgl_p"]));
+        // $this->K1 = $post['K1'];
+        // $this->K2 = $post['K2'];
+        // $this->K3 = $post['K3'];
+        // $this->K1 = $post['K4'];
+        // $this->K2 = $post['K5'];
+        // $this->K3 = $post['K6'];
+        // $this->K1 = $post['K7'];
+        // $this->Total_produksi = $post['z'];
 
+
+        // $this->db->insert($this->_table, $this);
         $data['save'] = $this->M_produksi;
         $data['save']->savedata();
 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Hasil Produksi berhasil disimpan</div>');
-        return $this->load->view('cobacoba1', $data);
+        return $this->index();
     }
 
 

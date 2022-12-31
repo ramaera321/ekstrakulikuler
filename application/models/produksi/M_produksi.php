@@ -75,10 +75,38 @@ class M_produksi extends CI_Model
     $this->db->where('perhitungan.Id_perhitungan', $id);
     return $this->db->get()->result();
   }
+  public function saveToProduksi()
+  {
+
+    $post = $this->input->post();
+
+    $data = array(
+      "Id_perhitungan" => $this->input->post('id_p'),
+      "Tanggal_Produksi" => date('Y/m/d', strtotime($this->input->post("tgl_p"))),
+      "K1" => $this->input->post('K1'),
+      "K2" => $this->input->post('K2'),
+      "K3" => $this->input->post('K3'),
+      "K4" => $this->input->post('K4'),
+      "K5" => $this->input->post('K5'),
+      "K6" => $this->input->post('K6'),
+      "K7" => $this->input->post('K7'),
+
+      "Total_produksi" => 0,
+    );
+
+    // echo "<pre>";
+    // print_r($data);
+    // die();
+
+    $this->db->insert($this->_table, $data);
+  }
   public function saveH()
   {
 
     $post = $this->input->post();
+    // echo "<pre>";
+    // print_r($post);
+    // die();
     //$this->K1_baik = $post["K1_max"];
     $this->Id_perhitungan = $post['Id_p'];
     $this->Tanggal_Produksi = date('Y/m/d', strtotime($post["tgl_p"]));
@@ -105,6 +133,7 @@ class M_produksi extends CI_Model
   {
 
     $data = array(
+      "Id_user" => $this->input->post('extra0'),
       "BuluTangkis" => $this->input->post('extra0'),
       "Futsal" => $this->input->post('extra1'),
       "ModernDance" => $this->input->post('extra2'),

@@ -1,7 +1,7 @@
-<?php $this->load->view("includes/header.php")?>
+<?php $this->load->view("includes/header.php") ?>
 
 <div class="app-body">
-    <?php $this->load->view("includes/menu.php")?>
+    <?php $this->load->view("includes/menu.php") ?>
 
     <main class="main">
         <!-- Breadcrumb-->
@@ -107,13 +107,14 @@
                                             </tr>
                                             <tr class="align-top">
                                                 <th>Rekomendasi Ekstra</th>
-                                                <td><?php arsort($ekstra);$no = 1;
-                                                $arr = array('Bulu Tangkis','Futsal','Modern Dance','Tapak Suci','Tari','Paskibra','Film','Seni Musik','Premrograman','Hizbul Wathan','KIR','PMR',"Qiroa'ah",'Basket','Jurnalistik');
-                                                foreach($ekstra as $x => $x_value) { //gae nyeluk extra teko array sing wes di urutno
-                                                    echo '&nbsp; ' . $no . '. ' . $arr[$x] . ' Dengan Nilai ' . $x_value . "<br>";
-                                                    $no++;
-                                                    if($no == 4) break;
-                                                    }?></td>
+                                                <td><?php arsort($ekstra);
+                                                    $no = 1;
+                                                    $arr = array('Bulu Tangkis', 'Futsal', 'Modern Dance', 'Tapak Suci', 'Tari', 'Paskibra', 'Film', 'Seni Musik', 'Premrograman', 'Hizbul Wathan', 'KIR', 'PMR', "Qiroa'ah", 'Basket', 'Jurnalistik');
+                                                    foreach ($ekstra as $x => $x_value) { //gae nyeluk extra teko array sing wes di urutno
+                                                        echo '&nbsp; ' . $no . '. ' . $arr[$x] . ' Dengan Nilai ' . $x_value . "<br>";
+                                                        $no++;
+                                                        if ($no == 4) break;
+                                                    } ?></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -121,45 +122,46 @@
 
                             </div>
 
-                            <form action="<?php echo base_url('index.php/produksi/C_produksi/save')?>" method="post">
-                                                <input type="hidden" name="extra0" value="<?= $ekstra[0]?>">
-                                                <input type="hidden" name="extra1" value="<?= $ekstra[1]?>">
-                                                <input type="hidden" name="extra2" value="<?= $ekstra[2]?>">
-                                                <input type="hidden" name="extra3" value="<?= $ekstra[3]?>">
-                                                <input type="hidden" name="extra4" value="<?= $ekstra[4]?>">
-                                                <input type="hidden" name="extra5" value="<?= $ekstra[5]?>">
-                                                <input type="hidden" name="extra6" value="<?= $ekstra[6]?>">
-                                                <input type="hidden" name="extra7" value="<?= $ekstra[7]?>">
-                                                <input type="hidden" name="extra8" value="<?= $ekstra[8]?>">
-                                                <input type="hidden" name="extra9" value="<?= $ekstra[9]?>">
-                                                <input type="hidden" name="extra10" value="<?= $ekstra[10]?>">
-                                                <input type="hidden" name="extra11" value="<?= $ekstra[11]?>">
-                                                <input type="hidden" name="extra12" value="<?= $ekstra[12]?>">
-                                                <input type="hidden" name="extra13" value="<?= $ekstra[13]?>">
-                                                <input type="hidden" name="extra14" value="<?= $ekstra[14]?>">
+                            <form action="<?php echo base_url('index.php/produksi/C_produksi/save') ?>" method="post">
+                                <input type="hidden" name="id_user" value="<?= $id[0] ?>">
+                                <input type="hidden" name="extra0" value="<?= $ekstra[0] ?>">
+                                <input type="hidden" name="extra1" value="<?= $ekstra[1] ?>">
+                                <input type="hidden" name="extra2" value="<?= $ekstra[2] ?>">
+                                <input type="hidden" name="extra3" value="<?= $ekstra[3] ?>">
+                                <input type="hidden" name="extra4" value="<?= $ekstra[4] ?>">
+                                <input type="hidden" name="extra5" value="<?= $ekstra[5] ?>">
+                                <input type="hidden" name="extra6" value="<?= $ekstra[6] ?>">
+                                <input type="hidden" name="extra7" value="<?= $ekstra[7] ?>">
+                                <input type="hidden" name="extra8" value="<?= $ekstra[8] ?>">
+                                <input type="hidden" name="extra9" value="<?= $ekstra[9] ?>">
+                                <input type="hidden" name="extra10" value="<?= $ekstra[10] ?>">
+                                <input type="hidden" name="extra11" value="<?= $ekstra[11] ?>">
+                                <input type="hidden" name="extra12" value="<?= $ekstra[12] ?>">
+                                <input type="hidden" name="extra13" value="<?= $ekstra[13] ?>">
+                                <input type="hidden" name="extra14" value="<?= $ekstra[14] ?>">
 
-                            <div class="card-footer">
-                                <button class="btn btn-sm btn-primary" type="submit">
-                                    <i class="fa fa-dot-circle-o"></i> Simpan</button>
-                                    </form>
-                                <a href="pengetahuan/c_pengetahuan/lihat/2021-09-30?"> 
-                                <button class="btn btn-sm btn-danger">Kembali</button>
-                                </a>
-
-                            </div>
-
+                                <div class="card-footer">
+                                    <button class="btn btn-sm btn-primary" type="submit">
+                                        <i class="fa fa-dot-circle-o"></i> Simpan</button>
                             </form>
+                            <a href="pengetahuan/c_pengetahuan/lihat/2021-09-30?">
+                                <button class="btn btn-sm btn-danger">Kembali</button>
+                            </a>
 
                         </div>
-                    </div>
-                    <!-- /.col-->
-                </div>
 
+                        </form>
+
+                    </div>
+                </div>
+                <!-- /.col-->
             </div>
 
         </div>
 
-
-    </main>
 </div>
-<?php $this->load->view("includes/footer");?>
+
+
+</main>
+</div>
+<?php $this->load->view("includes/footer"); ?>
